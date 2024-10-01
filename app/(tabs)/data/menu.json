@@ -1,0 +1,29 @@
+[
+    {
+      "id": "1",
+      "name": "Caesar Salad",
+      "description": "Fresh romaine lettuce with Caesar dressing, croutons, and parmesan cheese",
+      "course": "starter",
+      "price": "8.99",
+      "image": "https://example.com/caesar-salad.jpg",
+      "available": true
+    },
+    {
+      "id": "2",
+      "name": "Grilled Salmon",
+      "description": "Fresh Atlantic salmon fillet grilled to perfection, served with roasted vegetables",
+      "course": "main",
+      "price": "19.99",
+      "image": "https://example.com/grilled-salmon.jpg",
+      "available": true
+    },
+    {
+      "id": "3",
+      "name": "Chocolate Lava Cake",
+      "description": "Warm chocolate cake with a gooey center, served with vanilla ice cream",
+      "course": "dessert",
+      "price": "7.99",
+      "image": "https://example.com/chocolate-lava-cake.jpg",
+      "available": true
+    }
+  ]
