@@ -1,4 +1,4 @@
-// Start components/DishCard.tsx
+// Start Dish.tsx
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -16,7 +16,6 @@ const DishCard: React.FC<DishCardProps> = ({ dish }) => {
       style={styles.card}
       //onPress={() => navigation.navigate('Dish', { dish })}
       //onPress={() => (navigation.navigate as (screen: 'Dish', params: { dish: Dish }) => void)('Dish', { dish })}
-
     >
       <Image source={{ uri: dish.image }} style={styles.image} />
       <View style={styles.pillContainer}>
@@ -89,4 +88,4 @@ const styles = StyleSheet.create({
 });
 
 export default DishCard;
-// End components/DishCard.tsx
+// End Dish.tsx

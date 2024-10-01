@@ -1,12 +1,12 @@
-// Start screens/HomeScreen.tsx
+// Start Home.tsx
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, FlatList, StyleSheet, TextInput, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import DishCard from '../Dish'; // Assuming you have a DishCard component
+import DishCard from '../Dish';
 import { Dish } from './types';
 import * as FileSystem from 'expo-file-system';
 import { useFocusEffect } from '@react-navigation/native';
-import initialDishes from './data/menu.json'; // Import initial dishes
+import initialDishes from './data/menu.json'; 
 
 const DISHES_FILE = FileSystem.documentDirectory + 'menu.json';
 
@@ -103,4 +103,4 @@ const styles = StyleSheet.create({
 });
 
 export default HomeScreen;
-// End screens/HomeScreen.tsx
+// End Home.tsx
