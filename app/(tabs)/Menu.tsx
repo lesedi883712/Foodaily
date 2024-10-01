@@ -1,11 +1,9 @@
-// Start screens/MenuScreen.tsx
-import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Alert, Platform } from 'react-native';
+// Start
+import React, { useState, useEffect, useRef } from 'react';
+import { View, Animated, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity, Alert, Platform } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import { Dish } from './types';
 import * as FileSystem from 'expo-file-system';
-import { Asset } from 'expo-asset';
-// Import the initial dishes data
 import initialDishes from './data/menu.json';
 
 const MenuScreen: React.FC = () => {
@@ -79,9 +77,35 @@ const MenuScreen: React.FC = () => {
     }
   };
 
+  const colorAnimation = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    Animated.loop(
+      Animated.sequence([
+        Animated.timing(colorAnimation, {
+          toValue: 4, // I have 5 colors, so animate to value 4 (0 to 4)
+          duration: 5000, // 5 seconds to go through all colors
+          useNativeDriver: false, // Since we are animating color, we can't use the native driver
+        }),
+        Animated.timing(colorAnimation, {
+          toValue: 0, // Return to the first color
+          duration: 0, // Instantly return to start
+          useNativeDriver: false,
+        }),
+      ])
+    ).start();
+  }, [colorAnimation]);
+
+  const animatedColor = colorAnimation.interpolate({
+    inputRange: [0, 1, 2, 3, 4],
+    outputRange: ['#ff0000', '#00ff00', '#0000ff', '#ff00ff', '#00ffff'], // 5 different colors
+  });
+  
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>Add New Dish</Text>
+      <Animated.Text style={[styles.title, { color: animatedColor }]}>
+        Add New Dish
+      </Animated.Text>
       <TextInput
         style={styles.input}
         placeholder="Dish name"
@@ -113,7 +137,7 @@ const MenuScreen: React.FC = () => {
       />
       <TextInput
         style={styles.input}
-        placeholder="Image URL"
+        placeholder="Image URL from anywhere on the internet"
         value={newDish.image}
         onChangeText={(text) => setNewDish({ ...newDish, image: text })}
       />
@@ -130,6 +154,7 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingTop: 60,
     backgroundColor: 'white',
+    borderRadius: 10,
   },
   title: {
     fontSize: 24,
@@ -154,7 +179,7 @@ const styles = StyleSheet.create({
     })
   },
   addButton: {
-    backgroundColor: 'blue',
+    backgroundColor: '#252525',
     padding: 20,
     borderRadius: 15,
     alignItems: 'center',
@@ -166,4 +191,4 @@ const styles = StyleSheet.create({
 });
 
 export default MenuScreen;
-// End screens/MenuScreen.tsx
+// End

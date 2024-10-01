@@ -5,11 +5,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from './(tabs)/index';
 import MenuScreen from './(tabs)/Menu';
+import { View, StyleSheet } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
+    <View style={styles.container}>
     <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
@@ -30,6 +32,15 @@ export default function App() {
         <Tab.Screen name="Menu" component={MenuScreen} />
       </Tab.Navigator>
     </NavigationContainer>
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    margin: 10,
+    backgroundColor: 'white',
+    
+  },
+});
 // End App.tsx

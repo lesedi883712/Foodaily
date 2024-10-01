@@ -15,7 +15,7 @@ const DishCard: React.FC<DishCardProps> = ({ dish }) => {
     <TouchableOpacity
       style={styles.card}
       //onPress={() => navigation.navigate('Dish', { dish })}
-      onPress={() => (navigation.navigate as (screen: 'Dish', params: { dish: Dish }) => void)('Dish', { dish })}
+      //onPress={() => (navigation.navigate as (screen: 'Dish', params: { dish: Dish }) => void)('Dish', { dish })}
 
     >
       <Image source={{ uri: dish.image }} style={styles.image} />
@@ -30,7 +30,7 @@ const DishCard: React.FC<DishCardProps> = ({ dish }) => {
       <View style={styles.content}>
         <Text style={styles.name}>{dish.name}</Text>
         <Text style={styles.description}>{dish.description}</Text>
-        <Text style={styles.price}>${dish.price}</Text>
+        <Text style={styles.price}>R {dish.price}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -41,18 +41,16 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     backgroundColor: 'white',
     marginBottom: 15,
-    elevation: 3,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
+    
+    borderColor: '#e6e6e6',
+    borderWidth: 1,
+    padding: 5,
   },
   image: {
     width: '100%',
     height: 200,
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
-    padding: 5,
+    borderRadius: 10,
+    
   },
   pillContainer: {
     position: 'absolute',
@@ -61,8 +59,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   pill: {
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    paddingHorizontal: 10,
+    backgroundColor: 'orange',
+    paddingHorizontal: 15,
     paddingVertical: 5,
     borderRadius: 15,
   },

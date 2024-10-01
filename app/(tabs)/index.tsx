@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     backgroundColor: 'white',
+    borderRadius: 10,
   },
   searchContainer: {
     flexDirection: 'row',
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 10,
     marginBottom: 10,
-    marginTop: 20,
+    marginTop: 30,
   },
   searchIcon: {
     marginRight: 10,
@@ -93,6 +94,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
     color: 'green',
+    padding: 7,
+    backgroundColor: '#f0f0f0',
+    borderRadius: 100,
+    width: 150,
+    textAlign: 'center',
   },
 });
 

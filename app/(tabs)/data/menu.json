@@ -5,7 +5,7 @@
       "description": "Fresh romaine lettuce with Caesar dressing, croutons, and parmesan cheese",
       "course": "starter",
       "price": "8.99",
-      "image": "https://example.com/caesar-salad.jpg",
+      "image": "https://img.freepik.com/free-photo/side-view-caesar-salad-with-chicken-parmesan-cheese-white-bowl-wooden-board_140725-11875.jpg?t=st=1727812654~exp=1727816254~hmac=c6f23316db020f20a04f2dce44293e87221a6825f9ec2c16b24b8fe9ff5e1e3a&w=740",
       "available": true
     },
     {
@@ -14,7 +14,7 @@
       "description": "Fresh Atlantic salmon fillet grilled to perfection, served with roasted vegetables",
       "course": "main",
       "price": "19.99",
-      "image": "https://example.com/grilled-salmon.jpg",
+      "image": "https://img.freepik.com/premium-photo/grilled-salmon-fillet-with-asparagus-cherry-tomatoes_15083-10678.jpg?w=740",
       "available": true
     },
     {
@@ -23,7 +23,7 @@
       "description": "Warm chocolate cake with a gooey center, served with vanilla ice cream",
       "course": "dessert",
       "price": "7.99",
-      "image": "https://example.com/chocolate-lava-cake.jpg",
+      "image": "https://img.freepik.com/premium-photo/chocolate-lava-cake-with-rich-chocolate-core-chocolate-cake-images1186jpg_995407-188874.jpg?w=826",
       "available": true
     }
   ]
